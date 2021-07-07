@@ -2,7 +2,7 @@
 #!/bin/bash
 - [ HORAINICIAL=$(date +%T) ]
 - [ LOG="/var/log/$(echo $0 | cut -d'/' -f2)" ] 
-- [ echo -e "Início do script $0 em: `date +%d/%m/%Y-"("%H:%M")"`" &>> $LOG ]
+- [ echo -e "Início do script $0 em `date +%d/%m/%Y-"("%H:%M")"`" &>> $LOG ]
 - [ add-apt-repository universe &>> $LOG ]
 - [ add-apt-repository multiverse &>> $LOG ]
 - [ sudo rm /var/cache/debconf/config.dat ] 
@@ -22,6 +22,6 @@
 - [ HORAINICIAL01=$(date -u -d "$HORAINICIAL" +"%s") ]
 - [ HORAFINAL01=$(date -u -d "$HORAFINAL" +"%s") ]
 - [ TEMPO=`date -u -d "0 $HORAFINAL01 sec - $HORAINICIAL01 sec" +"%H:%M:%S"` ]
-- [ echo -e "Tempo gasto para execução do script $0: $TEMPO" ]
-- [ echo -e "Fim do script $0 em: `date +%d/%m/%Y-"("%H:%M")"`" &>> $LOG ]
+- [ echo -e "Tempo gasto para execução do script $0 $TEMPO" ]
+- [ echo -e "Fim do script $0 em `date +%d/%m/%Y-"("%H:%M")"`" &>> $LOG ]
 - [ exit 1 ]
